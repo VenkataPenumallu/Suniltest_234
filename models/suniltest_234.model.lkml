@@ -4,7 +4,7 @@ connection: "thelook"
 include: "/views/**/*.view"
 
 datagroup: suniltest_234_default_datagroup {
-  # sql_trigger: SELECT MAX(id) FROM etl_log;;
+  sql_trigger: SELECT MAX(id) FROM etl_log;;
   max_cache_age: "1 hour"
 }
 
@@ -111,7 +111,30 @@ explore: orders {
   }
 }
 
+# Place in `suniltest_234` model
+
+# Place in `suniltest_234` model
+# Place in `suniltest_234` model
+# Place in `suniltest_234` model
+explore: +order_items {
+  aggregate_table: rollup__products_id {
+    query: {
+      dimensions: [products.id]
+      measures: [products.rp]
+      timezone: "CET"
+    }
+
+    materialization: {
+      datagroup_trigger: suniltest_234_default_datagroup
+    }
+  }
+}
+
+
+
+
 explore: order_items {
+  sql_always_where: {% if inventory_items.id._is_filtered %} 1=1  {% endif %};;
   join: orders {
     type: left_outer
     sql_on: ${order_items.order_id} = ${orders.id} ;;
