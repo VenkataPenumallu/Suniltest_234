@@ -35,7 +35,12 @@ view: products {
 
   dimension: retail_price {
     type: number
-    sql: ${TABLE}.retail_price ;;
+    sql: ${TABLE}.retail_price  ;;
+  }
+
+  measure: rp {
+    type: number
+    sql: 0-${retail_price} ;;
   }
 
   dimension: sku {
