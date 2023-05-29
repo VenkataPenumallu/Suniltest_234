@@ -61,7 +61,7 @@ view: users {
   dimension: state {
     type: string
     sql: ${TABLE}.state ;;
-    html: <a herf="https://en.wikipedia.org/wiki/{{value}}}}">{{value}} </a> ;;
+    html: <a herf="https://www.google.com/search?q={{value}}">{{value}} </a> ;;
   }
 
   dimension: zip {
