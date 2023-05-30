@@ -16,6 +16,7 @@ view: products {
   dimension: category {
     type: string
     sql: ${TABLE}.category ;;
+    html: <a href="https://www.google.com/search?q={{value}}" traget="blank">{{value}} </a> ;;
   }
 
   dimension: department {
