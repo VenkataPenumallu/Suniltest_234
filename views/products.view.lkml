@@ -16,11 +16,7 @@ view: products {
   dimension: category {
     type: string
     sql: ${TABLE}.category ;;
-    link: {
-      label: "Dress"
-      url: "https://www.google.com/search?q=dress&rlz=1CAZVTZ_enIN979IN979&oq=dress&aqs=chrome..69i57j0i433i512l3j0i131i433i512j46i131i340i433i512l2j0i433i512l2j0i512.1820j0j7&sourceid=chrome&ie=UTF-8"
-      icon_url: "https://screenshot.googleplex.com/BXxPyWkgqJmKtNv"
-    }
+    html: <a href="https://www.google.com/search?q={{value}}" traget="blank">{{value}} ;;
   }
 
   dimension: department {
